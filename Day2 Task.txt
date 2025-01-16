@@ -1,0 +1,57 @@
+1-Make a project deployment.
+	https://adel-eleraky.github.io/RWD_project/
+
+2-what is pull request and request & differrent bettween them?
+	A pull request is a proposal to merge a set of changes from one branch into another. In a pull request, collaborators can review and discuss the proposed set of changes before they integrate the changes into the main codebase.
+	a request is more general word for accessing server and request data from it
+
+4-What is the command to delete the branch "new-email"
+	git branch -d new-email
+
+5-What is the command to push the current repository to the remote origin?
+	git push origin main
+
+6-what is git Rebase and how to use it ?
+	Git rebase is a command that allows you to integrate changes from one branch into another
+	by moving the base of your branche to a new point in history,
+	it rewrites the commit history, making it appear as if your branch started from a different commit 	
+	
+	commands: 
+		git checkout feature-branch
+		git rebase main
+	or: 
+		git checkout feature-branch
+		git rebase -i HEAD~n   ( replace n with number of commit you want to review )
+
+
+7-What is the command to get all the change history of the remote repository "origin"?
+	first you must: get fetch origin ,
+	then :  git log origin/main    
+	or:   git log --all
+
+8-What is the command to show the differences between the current branch and the branch "new-email"?
+	git diff new-email
+
+9-what is tags and Make five tags and release two of them?
+	tags are references that point to specific commits, typically used to mark important points in the repository's history, such as release versions.
+	
+	git tag -a v1.0.0 -m "Release version 1.0.0"
+	git tag -a v1.1.0 -m "Release version 1.1.0"
+	git tag -a v1.2.0 -m "Release version 1.2.0"
+	git tag -a v2.0.0 -m "Release version 2.0.0"
+	git tag -a v2.1.0 -m "Release version 2.1.0"
+
+	git push origin v1.0.0
+	git push origin v1.1.0
+	git push origin v2.0.0
+
+
+
+Bouns :
+Make SSh to your repo.
+	
+	ssh is way to connect to your repo using secure shell 
+	
+	generating ssh:  ssh-keygen -t ed25519 -C "your_email@example.com"
+	then add your ssh-key to your github account
+	then clone to your repo using ssh-key:-  git clone git@github.com:adel-eleraky/RWD_project.git
